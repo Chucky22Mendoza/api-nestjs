@@ -8,7 +8,7 @@ export class ProductController {
 
     constructor(private productService: ProductService) {}
 
-    @Post('/create')
+    @Post('/')
     async createPost(@Res() res, @Body() createProductDTO: CreateProductDTO) {
         const product = await this.productService.createProduct(createProductDTO);
         return res.status(HttpStatus.OK).json(product);
